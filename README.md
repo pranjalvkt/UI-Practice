@@ -49,10 +49,10 @@ To explore the examples in this repository:
 
 Contributions are welcome! If you have suggestions for additional topics, improvements, or new examples, feel free to fork the repository, make your changes, and submit a pull request. We encourage everyone to contribute to enhance this resource for all learners.
 
-How to Contribute
-Fork the repository.
-Create a new branch for your feature or fix.
-Make your changes and commit them.
-Push to your forked repository.
-Open a pull request detailing your changes.
-Your contributions will help improve this repository and assist others in their learning journey!
+- How to Contribute
+- Fork the repository.
+- Create a new branch for your feature or fix.
+- Make your changes and commit them.
+- Push to your forked repository.
+- Open a pull request detailing your changes.
+- Your contributions will help improve this repository and assist others in their learning journey!
