@@ -154,21 +154,34 @@ multiplyByThree(5);
 //     });
 // }
 
-let count = 0
-const getData = () => {
-    console.log("hello", count++);
+// let count = 0
+// const getData = () => {
+//     console.log("hello", count++);
+// }
+
+// const debounce = (func, del) => {
+//     let timer;
+//     return function () {
+//         let context = this;
+//         args = arguments;
+//         clearTimeout(timer);
+//         timer = setTimeout(() => {
+//             func()
+//         }, del);
+//     }
+// }
+// const newFunc = debounce(getData, 300);
+
+
+
+// let arr1 = [1,2,3,0,0,0];
+// let arr2 = [2,5,6];
+let arr1 = [1,2,0];
+let arr2 = [2];
+let m = 2, n = 1;
+for(let i = 0; i < arr2.length; i++) {
+    arr1[i+m] = arr2[i];
 }
 
-const debounce = (func, del) => {
-    let timer;
-    return function () {
-        let context = this;
-        args = arguments;
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-            func()
-        }, del);
-    }
-}
-const newFunc = debounce(getData, 300);
-
+arr1.sort((a,b)=> a - b)
+console.log(arr1);
