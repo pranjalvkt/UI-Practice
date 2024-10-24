@@ -176,12 +176,38 @@ multiplyByThree(5);
 
 // let arr1 = [1,2,3,0,0,0];
 // let arr2 = [2,5,6];
-let arr1 = [1,2,0];
-let arr2 = [2];
-let m = 2, n = 1;
-for(let i = 0; i < arr2.length; i++) {
-    arr1[i+m] = arr2[i];
+// let arr1 = [1,2,0];
+// let arr2 = [2];
+// let m = 2, n = 1;
+// for(let i = 0; i < arr2.length; i++) {
+//     arr1[i+m] = arr2[i];
+// }
+
+// arr1.sort((a,b)=> a - b)
+// console.log(arr1);
+
+
+let nameObj = {
+    firstName: "Pranjal",
+    lastName: "Tripathi",
+
+    // printFullName: function() {
+    //     console.log(this.firstName + " ", this.lastName);
+    // }
+}
+let newName = {
+    firstName: "Gaurav",
+    lastName: "Sharma",
+}
+// nameObj.printFullName()
+// nameObj.printFullName.call(newName);
+
+//Better way
+let printFullName = function(city, state) {
+    console.log(this.firstName, this.lastName, "works in", city, state);
 }
 
-arr1.sort((a,b)=> a - b)
-console.log(arr1);
+printFullName.call(nameObj, "Noida,", "UP")
+printFullName.apply(newName, ["Hyderabad,", "Telangana"])
+let newFullNameFunc = printFullName.bind(nameObj, "Noida,", "UP")
+newFullNameFunc();
