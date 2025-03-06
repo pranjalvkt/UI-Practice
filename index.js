@@ -10,7 +10,7 @@
 //             resolve("Actual data")
 //         }, 3000);
 //     })
-    
+
 //     return str
 // }
 // async function getDataByHelper () {
@@ -19,7 +19,7 @@
 //             resolve("meta data by helper")
 //         }, 3000);
 //     })
-    
+
 //     return str
 // }
 
@@ -39,13 +39,11 @@
 
 // getDataByHelper()
 // .then((data)=> {
-    // console.log(data);
-    // return getData();
-    // return data;
+// console.log(data);
+// return getData();
+// return data;
 // })
 // .then((data)=> console.log(data))
-
-
 
 /*
 // Polyfill for Bind
@@ -73,7 +71,6 @@ Function.prototype.myBind = function(...args) {
 let printMyName2 = printFullName.myBind(name, "Prayagraj");
 printMyName2("UP", "India");
 */
-
 
 /*
 // Using Closure
@@ -129,7 +126,6 @@ multiplyByThree(5);
 // 'use strict'
 // a = 2
 
-
 // async function getData() {
 //     let follower = await fetch('./followers_1.json').then((res)=> res.json())
 //     let following = await fetch('./following.json').then((res)=> res.json())
@@ -172,8 +168,6 @@ multiplyByThree(5);
 // }
 // const newFunc = debounce(getData, 300);
 
-
-
 // let arr1 = [1,2,3,0,0,0];
 // let arr2 = [2,5,6];
 // let arr1 = [1,2,0];
@@ -186,28 +180,177 @@ multiplyByThree(5);
 // arr1.sort((a,b)=> a - b)
 // console.log(arr1);
 
+// let nameObj = {
+//     firstName: "Pranjal",
+//     lastName: "Tripathi",
 
-let nameObj = {
-    firstName: "Pranjal",
-    lastName: "Tripathi",
-
-    // printFullName: function() {
-    //     console.log(this.firstName + " ", this.lastName);
-    // }
-}
-let newName = {
-    firstName: "Gaurav",
-    lastName: "Sharma",
-}
+//     // printFullName: function() {
+//     //     console.log(this.firstName + " ", this.lastName);
+//     // }
+// }
+// let newName = {
+//     firstName: "Gaurav",
+//     lastName: "Sharma",
+// }
 // nameObj.printFullName()
 // nameObj.printFullName.call(newName);
 
-//Better way
-let printFullName = function(city, state) {
-    console.log(this.firstName, this.lastName, "works in", city, state);
-}
+// //Better way
+// let printFullName = function(city, state) {
+//     console.log(this.firstName, this.lastName, "works in", city, state);
+// }
 
-printFullName.call(nameObj, "Noida,", "UP")
-printFullName.apply(newName, ["Hyderabad,", "Telangana"])
-let newFullNameFunc = printFullName.bind(nameObj, "Noida,", "UP")
-newFullNameFunc();
+// printFullName.call(nameObj, "Noida,", "UP")
+// printFullName.apply(newName, ["Hyderabad,", "Telangana"])
+// let newFullNameFunc = printFullName.bind(nameObj, "Noida,", "UP")
+// newFullNameFunc();
+
+//
+
+// Function.prototype.mybind = function (name, ...args) {
+//   let self = this;
+//   return function (...args2) {
+//     self.apply(name, [...args, ...args2]);
+//   };
+// };
+
+// let name = {
+//   firstName: "Pranjal",
+//   lastName: "Tripathi",
+// };
+// const getName = function (city, state, country, continent) {
+//   console.log(this.firstName, this.lastName, city, state, country, continent);
+// };
+
+// let bindFunc = getName.bind(name, "Pratapgarh", "UP");
+// bindFunc("India", "Asia");
+
+// let bindFunc2 = getName.mybind(name, "Pratapgarh", "UP");
+// bindFunc2("India", "Asia");
+
+// const obj = {
+//   firstName: "Hola",
+//   arrowFunc: () => {
+//     console.log(this);
+//   },
+//   simpleFunc: () => {
+//     console.log(this);
+//   },
+// };
+
+// function outerFunc() {
+//   let firstName = "Hola";
+//   return function arrowFunc() {
+//     console.log(this);
+//   };
+//   const simpleFunc = () => {
+//     console.log(this);
+//   };
+// }
+
+// obj.arrowFunc.call();
+// obj.simpleFunc();
+
+// let arrowFunc = outerFunc();
+// arrowFunc();
+
+// var a = "a";
+// const print = () => {
+//     console.log(a);
+//     var a = "b";
+// }
+// print();
+
+// console.log("a")
+// setTimeout(() => console.log("b"));
+// console.log("c");
+// Promise.resolve().then(()=> console.log("d"))
+// console.log("e")
+
+// let c = 10
+// function test3() {
+//     c = 20
+//     d = 10
+//     console.log(d)
+//     var d
+// }
+// test3()
+// console.log(c)
+
+// for (var i = 0; i < 5; i++) {
+//     (function (i) {
+//         setTimeout(function () {
+//             console.log(i);
+//           }, 0);
+//     })(i)
+// }
+
+// var name;
+// var obj = {
+//   name: "Piyush",
+//   getName: function () {
+//     name = "Shivani";
+//     console.log(this.name);
+//   },
+//   showName: () => {
+//     console.log(this.name);
+//   },
+// };
+// var b = obj.getName;
+// obj.showName();
+// b()
+// obj.getName();
+
+// const animals = {};
+// let dog = { emoji: '🐶' }
+// let cat = { emoji: '🐈' }
+
+// animals["dog"] = { ...dog, name: "Mara" }
+// animals["cat"] = { ...cat, name: "Sara" }
+
+// console.log(animals["dog"])
+
+// const user = {
+// 	email: "e@mail.com",
+// 	password: "12345"
+// }
+
+// const updateUser = ({ email, password }) => {
+// 	if (email) {
+// 		Object.assign(user, { email })
+// 	}
+
+// 	if (password) {
+// 		user.password = password
+// 	}
+//     console.log(user);
+    
+// 	return user
+// }
+
+// const updatedUser = updateUser({ email: "new@email.com"})
+
+// console.log(updatedUser === user)
+
+// class Calc {
+// 	constructor() {
+// 		this.count = 0 
+// 	}
+
+// 	increase() {
+// 		this.count++
+// 	}
+// }
+
+// const calc = new Calc()
+// new Calc().increase()
+
+// console.log(calc.count)
+
+// const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+// const list = fruits.entries();
+
+// for (let x of list) {
+//     console.log(x);
+// }
